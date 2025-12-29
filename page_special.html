@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+<body>
+<nav class="navbar">
+  <ul class="nav-center">
+    <li><a href="index.html">HOME ADWA GAMON</a></li>
+    <li><a href="about.html">ABOUT US</a></li>
+    <li><a href="contact.html">CONTACT ME</a></li>
+    <li><a href="page_special.html">PAGE SPECIAL</a></li>
+  </ul>
+  <ul class="nav-right">
+    <li><a href="kritik-saran.html" class="kritik-btn">MESSAGE</a></li>
+  </ul>
+</nav>
+
+<section class="special-page">
+
+  <div class="special-container">
+
+    <!-- FOTO 1 -->
+    <div class="photo main-photo">
+      <img src="assets/wa3.jpeg.jpg" alt="Foto Adwa">
+    </div>
+
+    <!-- JUDUL -->
+    <h1 class="special-name">Adwa Reqilla Efyan</h1>
+    <span class="special-role">Pemula saat fotbar</span>
+
+    <!-- MUSIK -->
+<div class="music-card">
+  <img src="assets/reunion.jpg" alt="Album Cover">
+
+  <div class="music-info">
+    <div class="title">A Sorrowful Reunion</div>
+    <div class="artist">Reality Club</div>
+  </div>
+
+  <button id="playBtn">▶</button>
+</div>
+
+<audio id="music">
+  <source src="lagu/A Sorrowful Reunion - Reality Club (Official Lyric Video).mp3" type="audio/mpeg">
+</audio>
+
+
+    <!-- CERITA -->
+    <div class="special-text">
+      <p>
+        Ini bukan halaman biasa.  
+        Ini cuma tempat kecil untuk perasaan yang tidak pernah benar-benar pergi.
+      </p>
+
+      <p>
+        Aku tidak tahu kapan semuanya berubah,  
+        tapi yang aku tahu, namamu masih sama di hati aku.
+      </p>
+
+      <p>
+        Kalau suatu hari kamu baca ini,  
+        aku cuma mau kamu tahu satu hal:
+        perasaan ini tidak pernah dibuat-buat.
+      </p>
+    </div>
+
+    <!-- FOTO 2 -->
+    <div class="photo second-photo">
+      <img src="assets/wa1.jpeg.jpg" alt="Foto Kenangan">
+    </div>
+
+    <!-- PENUTUP -->
+    <div class="special-text end">
+      <p>
+        Tidak semua hal harus dimiliki.   
+        Ada yang cukup disimpan, diingat, dan didoakan diam-diam.
+      </p>
+
+      <p class="signature">
+        — Adwa
+      </p>
+    </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+  const music = document.getElementById("music");
+  const playBtn = document.getElementById("playBtn");
+
+  playBtn.addEventListener("click", () => {
+    if (music.paused) {
+      music.play();
+      playBtn.textContent = "⏸";
+    } else {
+      music.pause();
+      playBtn.textContent = "▶";
+    }
+  });
+</script>
+
+
+
+<footer class="footer">
+  © 2025 Adwa Reqila Efyan. i miss youu Nazwaaaa,
+  DO YOU WANT COMEBACK TO ME AGAIN? 😢💔
+</footer>
+
+</body>
+</html>

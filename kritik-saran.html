@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kritik & Saran</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<script>
+  (function () {
+    emailjs.init("dLdYOw4sQXATyYsHr");
+  })();
+
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      emailjs.sendForm(
+        "service_16ifqsn ",
+        "template_pa9etxn",
+        this
+      ).then(
+        function () {
+          alert("Pesan berhasil dikirim!");
+        },
+        function (error) {
+          alert("Gagal mengirim pesan");
+          console.log(error);
+        }
+      );
+    });
+</script>
+
+
+<body>
+
+<nav class="navbar">
+  <ul class="nav-center">
+    <li><a href="index.html">HOME ADWA GAMON</a></li>
+    <li><a href="about.html">ABOUT US</a></li>
+    <li><a href="contact.html">CONTACT ME</a></li>
+    <li><a href="page_special.html">PAGE SPECIAL</a></li>
+  </ul>
+  <ul class="nav-right">
+    <li><a href="kritik-saran.html" class="kritik-btn">MESSAGE</a></li>
+  </ul>
+</nav>
+
+<section class="simple-section">
+  <div class="card">
+    <h2>For Someone?</h2>
+    <p></p>
+<form id="contact-form">
+  <input
+    type="text"
+    name="nama_pengirim"
+    placeholder="From (JUJUR WOI)"
+    required
+  >
+
+  <input
+    type="text"
+    name="nama_penerima"
+    placeholder="To (JUJUR WOI)"
+    required
+  >
+
+  <textarea
+    name="message"
+    placeholder="Tulis pesan"
+    required
+  ></textarea>
+
+  <button type="submit">Kirim</button>
+  <P>Jika ada pesan yang ingin disampaikan, sampaikan saja nanti saya yang akan
+    menyampaikan ke orangnya.
+  </P>
+</form>
+  </div>
+
+</section>
+
+<footer class="footer">
+  © 2025 Adwa Reqila Efyan. i miss youu Nazwaaaa,
+  DO YOU WANT COMEBACK TO ME AGAIN? 😢💔
+</footer>
+
+</body>
+</html>

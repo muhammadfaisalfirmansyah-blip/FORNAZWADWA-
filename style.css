@@ -1,0 +1,907 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "Times New Roman", serif; */
+}
+
+body {
+  background: radial-gradient(circle, #ffffff, #eaeaea);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  padding: 18px 40px;
+  background: #000;
+  align-items: center;
+}
+
+.nav-center {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0 auto;
+}
+
+.nav-center a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+
+.nav-center a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  transition: 0.3s;
+}
+
+.nav-center a:hover::after {
+  width: 100%;
+}
+
+.kritik-btn {
+  background: #fff;
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* HOME */
+.home {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 80px;
+}
+
+.home-image img {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.home-button a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 22px;
+  background: #000;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+}
+
+/* SECTION UMUM */
+.simple-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: #fff;
+  padding: 30px;
+  width: 320px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.profile-img {
+  width: 90px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+}
+
+/* FORM */
+.form input,
+.form textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px;
+}
+
+.form button {
+  margin-top: 10px;
+  padding: 8px;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  border: none;
+}
+
+/* FOOTER */
+.footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 16px;
+  font-size: 14px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* ===================== */
+/* MUSIC BAWAH ABOUT */
+/* ===================== */
+.music-wrapper {
+  margin-top: 20px;
+  width: 320px;
+  text-align: center;
+}
+
+.music-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.music-wrapper audio {
+  width: 100%;
+}
+
+.jembut-enak {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+}
+
+.music-card {
+  background: #ffffff;
+  padding: 20px 40px;
+  border-radius: 15px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.music-card h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.music-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.music-card audio {
+  width: 100%;
+  outline: none;
+}
+
+/* =========================
+   FORM – HANYA KOLOM INPUT
+   ========================= */
+
+#contact-form {
+  width: 100%;
+}
+
+/* Semua kolom input, textarea */
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+
+  border: 1px solid #ccc;
+  border-radius: 6px;
+
+  font-size: 14px;
+  font-family: inherit;
+
+  box-sizing: border-box;
+}
+
+/* Fokus saat diklik */
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+/* Textarea */
+#contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Tombol (tidak ubah warna, cuma rapiin) */
+#contact-form button {
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Video Page */
+.video-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f4f4;
+  flex: 1;
+}
+
+
+.video-card {
+  background: #fff;
+  padding: 30px;
+  width: 380px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.video-card h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.video-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.video-card video {
+  width: 100%;
+  border-radius: 12px;
+  outline: none;
+}
+
+.video-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+}
+
+/* card */
+.video-card {
+  width: 380px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  text-align: center;
+
+  /* PENTING */
+  position: relative;
+}
+
+/* video */
+.video-card video {
+  width: 100%;
+  border-radius: 12px;
+  margin: 15px 0;
+}
+
+/* teks bawah */
+.closing-text {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* tombol umum */
+.btn {
+  font-size: 13px;
+  text-decoration: none;
+  color: #555;
+  background: #f0f0f0;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: 0.3s ease;
+}
+
+/* hover */
+.btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* BACK kiri atas */
+.back-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+/* NEXT kanan bawah (INI YANG LU MAU) */
+.next-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+/* CSS kamu yang lama */
+/* ------------------ */
+/* ... */
+
+/* =========================
+   NAVBAR CONTENT ANIMATION
+   Navbar tetap diam
+========================= */
+
+/* pastikan navbar tidak bergerak */
+.navbar {
+  animation: none;
+}
+
+/* item navbar saja yang bergerak */
+.nav-center li,
+.nav-right li {
+  opacity: 0;
+  animation: navItemFade 0.6s ease forwards;
+}
+
+/* animasi berurutan */
+.nav-center li:nth-child(1) { animation-delay: 0.2s; }
+.nav-center li:nth-child(2) { animation-delay: 0.35s; }
+.nav-center li:nth-child(3) { animation-delay: 0.5s; }
+.nav-center li:nth-child(4) { animation-delay: 0.65s; }
+
+.nav-right li {
+  animation-delay: 0.8s;
+}
+
+/* keyframes */
+@keyframes navItemFade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* hover tetap smooth */
+.navbar a {
+  transition: opacity 0.3s ease;
+}
+
+.navbar a:hover {
+  opacity: 0.75;
+}
+
+/* tombol container */
+.home-button {
+  margin: 10px 0;
+}
+
+/* tombol animasi */
+.btn-anim {
+  display: inline-block;
+  padding: 10px 22px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+/* efek hover naik */
+.btn-anim:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* efek cahaya geser */
+.btn-anim::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.5),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.btn-anim:hover::after {
+  left: 100%;
+}
+
+/* animasi masuk halaman */
+.home-content {
+  animation: fadeSlide 1s ease forwards;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   ABOUT PAGE CARD ANIMATION
+========================= */
+
+/* card animasi muncul */
+.simple-section .card {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  animation: cardFadeUp 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+/* animasi teks satu-satu (lebih hidup) */
+.simple-section .card h2 {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: textFade 0.6s ease forwards;
+  animation-delay: 0.45s;
+}
+
+.simple-section .card p,
+.simple-section .card b {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: textFade 0.6s ease forwards;
+}
+
+.simple-section .card p:nth-of-type(1) { animation-delay: 0.6s; }
+.simple-section .card b { animation-delay: 0.75s; }
+.simple-section .card p:nth-of-type(2) { animation-delay: 0.9s; }
+
+/* music ikut muncul dari bawah */
+.music-wrapper {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: musicFadeUp 0.7s ease forwards;
+  animation-delay: 1.1s;
+}
+
+/* =========================
+   KEYFRAMES
+========================= */
+
+@keyframes cardFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes textFade {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes musicFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESET SEDERHANA */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 1000;
+}
+
+/* NAMA DI KIRI */
+.nav-name {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* FOTO DI KANAN */
+.nav-photo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%; /* ini yang bikin BULAT */
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+/* BERI JARAK KONTEN AGAR TIDAK KETUTUP NAVBAR */
+body {
+  padding-top: 90px;
+}
+
+/* =========================
+   VIDEO CARD
+========================= */
+
+ .video-card {
+  width: 100%;
+  max-width: 720px; 
+  margin: 0 auto;
+}  
+
+.video-card video {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+} 
+
+/* ===============================
+   CARD VIDEO – WARNA MENARIK
+   =============================== */
+
+.video-card {
+  width: 420px;
+  padding: 24px;
+  margin: 80px auto;
+  border-radius: 22px;
+  width: 100%;
+  max-width: 720px; 
+  margin: 0 auto;
+
+  /* WARNA CARD */
+  background: linear-gradient(
+    135deg,
+    #fdfbfb,
+    #f3e7e9,
+    #e3eeff
+  );
+
+  /* Efek kedalaman */
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  /* Animasi masuk + mengambang */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: pageEnter 1.2s ease forwards;
+}
+
+/* ===============================
+   ANIMASI MASUK
+   =============================== */
+@keyframes pageEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   EFEK MENGAMBANG
+   =============================== */
+@keyframes floatCard {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   HOVER (TETAP BESAR)
+   =============================== */
+.video-card:hover {
+  box-shadow:
+    0 32px 64px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+
+/* SAMPE SINI CARD VIDEO */
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+/* PILL PUTIH */
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f5f5f5;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  transition: 0.25s ease;
+}
+
+.social-pill:hover {
+  transform: translateY(-2px);
+}
+
+/* ICON */
+.social-pill img {
+  width: 16px;
+  height: 16px;
+}
+
+/* KHUSUS INSTAGRAM */
+.social-pill.ig:hover {
+  background: #ffeef3;
+}
+
+/* KHUSUS WHATSAPP */
+.social-pill.wa:hover {
+  background: #e9fff1;
+}
+
+.special-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fdfdfd, #eaeaea);
+  display: flex;
+  justify-content: center;
+  padding: 70px 15px;
+}
+
+.special-container {
+  max-width: 460px;
+  width: 100%;
+  background: #fff;
+  padding: 45px 30px;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.18);
+  animation: fadeUp 1.3s ease;
+}
+
+/* FOTO */
+.photo img {
+  width: 100%;
+  border-radius: 22px;
+  object-fit: cover;
+}
+
+.main-photo img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 3px solid #000;
+  margin-bottom: 20px;
+}
+
+.second-photo {
+  margin: 35px 0;
+}
+
+/* NAMA */
+.special-name {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.special-role {
+  font-size: 13px;
+  color: #777;
+}
+
+/* TEKS */
+.special-text {
+  margin-top: 30px;
+}
+
+.special-text p {
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 18px;
+  color: #222;
+}
+
+.special-text.end {
+  margin-top: 25px;
+}
+
+.signature {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* MUSIK */
+.music-card {
+  margin-top: 35px;
+  padding: 22px;
+  background: #f6f6f6;
+  border-radius: 20px;
+}
+
+.music-card h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.music-card p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.music-card audio {
+  width: 100%;
+}
+
+/* ANIMASI */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  font-family: 'Singkong', cursive;
+}
+
+.navbar {
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* ===== MINI MUSIC CARD ===== */
+.music-card {
+  margin: 20px auto;
+  background: white;
+  width: 320px;
+  padding: 14px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+.music-card img {
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.music-info {
+  flex: 1;
+}
+
+.music-info .title {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.music-info .artist {
+  font-size: 13px;
+  color: #666;
+}
+
+.music-card button {
+  border: none;
+  background: black;
+  color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* ===== MINI MUSIC CARD ===== */
+.music-card {
+  margin: 25px auto;
+  background: white;
+  width: 320px;
+  padding: 14px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+.music-card img {
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.music-info {
+  flex: 1;
+}
+
+.music-info .title {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.music-info .artist {
+  font-size: 13px;
+  color: #666;
+}
+
+.music-card button {
+  border: none;
+  background: black;
+  color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+}
