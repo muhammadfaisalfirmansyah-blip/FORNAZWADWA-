@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Message</title>
+  <title>NAZWADWA</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,7 +11,8 @@
 <!-- NAVBAR -->
 <nav class="navbar">
   <ul class="nav-center">
-    <li><a href="video3.html" class="kritik-btn">BACK</a></li>
+    <li><a href="javascript:history.back()" class="kritik-btn">Kembali</a>
+</li>
   </ul>
 </nav>
 
@@ -31,21 +32,21 @@
       >
 
       <!-- PILIH JAWABAN -->
-      <label for="waktu">Pilih Jawaban:</label>
-      <select id="waktu" name="jawaban_" required>
+      <label>Pilih Jawaban:</label>
+      <select name="jawaban_" required>
         <option value="" disabled selected>Pilih Jawaban</option>
-        <option value="Sebelum pukul 22.00">Punya</option>
-        <option value="Setelah pukul 22.00">Punya, ADWA (tapi belum jadian)</option>
-        <option value="Setelah pukul 22.00">Punya, NAZWA (tapi belum jadian)</option>
-        <option value="Setelah pukul 22.00">Tidak</option>
-        <option value="Setelah pukul 22.00">Tidak, Teman Tapi Mesra</option>
-        <option value="Setelah pukul 22.00">TIdak, HTS</option>
+        <option value="Punya">Punya</option>
+        <option value="Punya, ADWA (tapi belum jadian)">Punya, ADWA (tapi belum jadian)</option>
+        <option value="Punya, NAZWA (tapi belum jadian)">Punya, NAZWA (tapi belum jadian)</option>
+        <option value="Tidak">Tidak</option>
+        <option value="Tidak, Teman Tapi Mesra">Tidak, Teman Tapi Mesra</option>
+        <option value="Tidak, HTS">Tidak, HTS</option>
       </select>
 
-      <!-- JAWABAN -->
+      <!-- OPSIONAL -->
       <input
         type="text"
-        name="nama_"
+        name="nama_pacar"
         placeholder="Jika punya tuliskan nama nya (opsional)"
       >
 
@@ -67,24 +68,35 @@
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script>
+  // Inisialisasi EmailJS
   (function () {
     emailjs.init("dLdYOw4sQXATyYsHr");
   })();
 
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
+  const form = document.getElementById("contact-form");
+
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
+
+    const namaPacarInput = form.querySelector('input[name="nama_pacar"]');
+
+    // Jika opsional kosong, tetap kirim ke email
+    if (namaPacarInput.value.trim() === "") {
+      namaPacarInput.value = "Tidak diisi / Tidak disebutkan";
+    }
 
     emailjs.sendForm(
       "service_66xyz2o",
       "template_x5ha6vw",
-      this
+      form
     ).then(
       function () {
-        alert("Pesan berhasil dikirim!");
+        alert("Pesan berhasil dikirim 💌");
+        form.reset();
       },
       function (error) {
-        alert("Gagal mengirim pesan");
-        console.log(error);
+        alert("Pesan gagal dikirim 😥");
+        console.error("EmailJS Error:", error);
       }
     );
   });
