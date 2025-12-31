@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Message</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <ul class="nav-center">
+    <li><a href="video3.html" class="kritik-btn">BACK</a></li>
+  </ul>
+</nav>
+
+<!-- FORM SECTION -->
+<section class="simple-section">
+  <div class="card">
+    <h2>Punya atau Tidak</h2>
+
+    <form id="contact-form">
+
+      <!-- NAMA PENGIRIM -->
+      <input
+        type="text"
+        name="nama_pengirim"
+        placeholder="Dari siapa"
+        required
+      >
+
+      <!-- PILIH JAWABAN -->
+      <label for="waktu">Pilih Jawaban:</label>
+      <select id="waktu" name="jawaban_" required>
+        <option value="" disabled selected>Pilih Jawaban</option>
+        <option value="Sebelum pukul 22.00">Punya</option>
+        <option value="Setelah pukul 22.00">Punya, ADWA (tapi belum jadian)</option>
+        <option value="Setelah pukul 22.00">Punya, NAZWA (tapi belum jadian)</option>
+        <option value="Setelah pukul 22.00">Tidak</option>
+        <option value="Setelah pukul 22.00">Tidak, Teman Tapi Mesra</option>
+        <option value="Setelah pukul 22.00">TIdak, HTS</option>
+      </select>
+
+      <!-- JAWABAN -->
+      <input
+        type="text"
+        name="nama_"
+        placeholder="Jika punya tuliskan nama nya (opsional)"
+      >
+
+      <!-- TOMBOL -->
+      <button type="submit">Kirim</button>
+
+      <p>Sampaikan saja ya 🙌, agar saya bisa tenang.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  © 2025 Adwa Reqila Efyan. i miss youu Nazwaaaa,
+  DO YOU WANT COMEBACK TO ME AGAIN?
+</footer>
+
+<!-- EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  (function () {
+    emailjs.init("dLdYOw4sQXATyYsHr");
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_66xyz2o",
+      "template_x5ha6vw",
+      this
+    ).then(
+      function () {
+        alert("Pesan berhasil dikirim!");
+      },
+      function (error) {
+        alert("Gagal mengirim pesan");
+        console.log(error);
+      }
+    );
+  });
+</script>
+
+</body>
+</html>
